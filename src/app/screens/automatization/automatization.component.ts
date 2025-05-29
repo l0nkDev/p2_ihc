@@ -3,12 +3,12 @@ import { FormsModule } from '@angular/forms';
 import { HistoryEntry } from "../../components/historyentry/historyentry.component";
 
 @Component({
-  selector: 'prospects',
-  templateUrl: './profile.component.html',
+  selector: 'automatization',
+  templateUrl: './automatization.component.html',
   imports: [FormsModule, HistoryEntry],
 })
 
-export class ProfileComponent {
+export class AutomatizationComponent {
 
 
 }

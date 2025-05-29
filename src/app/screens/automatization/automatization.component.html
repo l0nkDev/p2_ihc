@@ -1,0 +1,241 @@
+<div style=" padding: 32px; display: flex; flex-direction: row; justify-content: space-between; height: calc(100vh - 84px);">
+  <div style="display: flex; flex-direction: column; flex-grow: 100; gap: 32px;">
+    <div class="card" style=" border-radius: 20px;  margin-left: 32px; overflow: hidden; background: linear-gradient(180deg, #A378F8 0px, #A378F8 65px, #FFFFFF 65px, #FFFFFF 100%);">
+      <div class="card-body" style="padding-left: 0px; padding-right: 0px;">
+        <div style="display: flex; flex-direction: column; justify-content: center; padding-bottom: 10px;">
+          <div style="display: flex; flex-direction: row; justify-content: start; align-items: center; padding-left: 32px;">
+            <b style="font-family: Inter; font-size: 24px; margin-bottom: 0px; text-align: center; z-index: 100; color: #FFFFFF;">Nueva Regla</b>
+          </div>
+        </div>
+        <div style="padding: 32px;">
+          <div style="display: flex; flex-direction: row; font-family: Inter; font-size: 20px; color: #A378F8; justify-content: space-evenly;">
+            <div style="display: flex; flex-grow: 1; flex-direction: row; justify-content: space-between;">
+              <div style="display: flex; flex-direction: column;">
+                <div style="margin-bottom: 7px;">Cuando cliente:</div>
+                <select class="form-select" style="font-family: Inter; font-size: 20px;" aria-label="Default select example">
+                  <option selected>Seleccionar...</option>
+                  <option value="1">No contesta</option>
+                  <option value="2">No inicia sesión</option>
+                  <option value="3">no renovó</option>
+                </select>
+              </div>
+              <div style="display: flex; flex-direction: column;">
+                <div style="margin-bottom: 7px;">Por:</div>
+                <div style="display: flex; flex-direction: row; gap: 32px">
+                  <input class="form-control" type="number" [defaultValue]="0" style="width: 55px">
+                  <select class="form-select" style="font-family: Inter; font-size: 20px;" aria-label="Default select example">
+                    <option selected>Seleccionar...</option>
+                    <option value="1">Minutos</option>
+                    <option value="2">Horas</option>
+                    <option value="3">Días</option>
+                    <option value="4">Meses</option>
+                  </select>
+                </div>
+              </div>
+              <div style="display: flex; flex-direction: column;">
+                <div style="margin-bottom: 7px;">Hacer:</div>
+                <select class="form-select" style="font-family: Inter; font-size: 20px;" aria-label="Default select example">
+                  <option selected>Seleccionar...</option>
+                  <option value="1">Cerrar su cuenta</option>
+                  <option value="2">Reenviar mensaje</option>
+                  <option value="3">Enviar recordatorio</option>
+                  <option value="4">Mandar a "No interesado"</option>
+                </select>
+              </div>
+            </div>
+            <img src="icons/plus_purple.png" style="height: 28px; align-self: center; margin-left: 48px; margin-right: 32px;">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card" style=" border-radius: 20px;  margin-left: 32px; overflow: hidden; background: linear-gradient(180deg, #A378F8 0px, #A378F8 65px, #FFFFFF 65px, #FFFFFF 100%);">
+      <div class="card-body" style="padding-left: 0px; padding-right: 0px;">
+        <div style="display: flex; flex-direction: column; justify-content: center; padding-bottom: 10px; gap: 16px">
+          <div style="display: flex; flex-direction: row; justify-content: start; align-items: center; padding-left: 32px;">
+            <b style="font-family: Inter; font-size: 24px; margin-bottom: 0px; text-align: center; z-index: 100; color: #FFFFFF;">Reglas:</b>
+          </div>
+        </div>
+        <div style="padding: 16px; display: flex; flex-direction: column; gap: 16px;">
+
+
+          <div class="card card-body" style="border-radius: 30px; display: flex; flex-direction: row; font-family: Inter; font-size: 20px; color: #A378F8; justify-content: space-evenly;">
+            <div style="display: flex; flex-grow: 1; flex-direction: row; justify-content: space-between;">
+              <div style="display: flex; flex-direction: column;">
+                <div style="margin-bottom: 7px;">Cuando cliente:</div>
+                <select class="form-select" disabled style="font-family: Inter; font-size: 20px;" aria-label="Default select example">
+                  <option selected>No contesta</option>
+                  <option value="1">No contesta</option>
+                  <option value="2">No inicia sesión</option>
+                  <option value="3">no renovó</option>
+                </select>
+              </div>
+              <div style="display: flex; flex-direction: column;">
+                <div style="margin-bottom: 7px;">Por:</div>
+                <div style="display: flex; flex-direction: row; gap: 32px">
+                  <input class="form-control" disabled type="number" [defaultValue]="12" style="width: 55px">
+                  <select class="form-select" disabled style="font-family: Inter; font-size: 20px;" aria-label="Default select example">
+                    <option selected>Horas</option>
+                    <option value="1">Minutos</option>
+                    <option value="2">Horas</option>
+                    <option value="3">Días</option>
+                    <option value="4">Meses</option>
+                  </select>
+                </div>
+              </div>
+              <div style="display: flex; flex-direction: column;">
+                <div style="margin-bottom: 7px;">Hacer:</div>
+                <select class="form-select" disabled style="font-family: Inter; font-size: 20px;" aria-label="Default select example">
+                  <option selected>Reenviar mensaje</option>
+                  <option value="1">Cerrar su cuenta</option>
+                  <option value="2">Reenviar mensaje</option>
+                  <option value="3">Enviar recordatorio</option>
+                  <option value="4">Mandar a "No interesado"</option>
+                </select>
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: row; justify-content: space-between; margin-left: 32px; gap: 16px;">
+              <img src="icons/edit.png" style="height: 28px; align-self: center;">
+              <img src="icons/trash.png" style="height: 28px; align-self: center;">
+              <img src="icons/toggle_on.png" style="height: 28px; align-self: center;">
+            </div>
+          </div>
+
+
+          <div class="card card-body" style="border-radius: 30px; display: flex; flex-direction: row; font-family: Inter; font-size: 20px; color: #A378F8; justify-content: space-evenly;">
+            <div style="display: flex; flex-grow: 1; flex-direction: row; justify-content: space-between;">
+              <div style="display: flex; flex-direction: column;">
+                <div style="margin-bottom: 7px;">Cuando cliente:</div>
+                <select class="form-select" disabled style="font-family: Inter; font-size: 20px;" aria-label="Default select example">
+                  <option selected>No contesta</option>
+                  <option value="1">No contesta</option>
+                  <option value="2">No inicia sesión</option>
+                  <option value="3">no renovó</option>
+                </select>
+              </div>
+              <div style="display: flex; flex-direction: column;">
+                <div style="margin-bottom: 7px;">Por:</div>
+                <div style="display: flex; flex-direction: row; gap: 32px">
+                  <input class="form-control" disabled type="number" [defaultValue]="3" style="width: 55px">
+                  <select class="form-select" disabled style="font-family: Inter; font-size: 20px;" aria-label="Default select example">
+                    <option selected>Dias</option>
+                    <option value="1">Minutos</option>
+                    <option value="2">Horas</option>
+                    <option value="3">Días</option>
+                    <option value="4">Meses</option>
+                  </select>
+                </div>
+              </div>
+              <div style="display: flex; flex-direction: column;">
+                <div style="margin-bottom: 7px;">Hacer:</div>
+                <select class="form-select" disabled style="font-family: Inter; font-size: 20px;" aria-label="Default select example">
+                  <option selected>Mandar a "No interesado"</option>
+                  <option value="1">Cerrar su cuenta</option>
+                  <option value="2">Reenviar mensaje</option>
+                  <option value="3">Enviar recordatorio</option>
+                  <option value="4">Mandar a "No interesado"</option>
+                </select>
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: row; justify-content: space-between; margin-left: 32px; gap: 16px;">
+              <img src="icons/edit.png" style="height: 28px; align-self: center;">
+              <img src="icons/trash.png" style="height: 28px; align-self: center;">
+              <img src="icons/toggle_off.png" style="height: 28px; align-self: center;">
+            </div>
+          </div>
+          <div class="card card-body" style="border-radius: 30px; display: flex; flex-direction: row; font-family: Inter; font-size: 20px; color: #A378F8; justify-content: space-evenly;">
+            <div style="display: flex; flex-grow: 1; flex-direction: row; justify-content: space-between;">
+              <div style="display: flex; flex-direction: column;">
+                <div style="margin-bottom: 7px;">Cuando cliente:</div>
+                <select class="form-select" style="font-family: Inter; font-size: 20px;" aria-label="Default select example">
+                  <option selected>No contesta</option>
+                  <option value="1">No contesta</option>
+                  <option value="2">No inicia sesión</option>
+                  <option value="3">no renovó</option>
+                </select>
+              </div>
+              <div style="display: flex; flex-direction: column;">
+                <div style="margin-bottom: 7px;">Por:</div>
+                <div style="display: flex; flex-direction: row; gap: 32px">
+                  <input class="form-control" type="number" [defaultValue]="3" style="width: 55px">
+                  <select class="form-select" style="font-family: Inter; font-size: 20px;" aria-label="Default select example">
+                    <option selected>Dias</option>
+                    <option value="1">Minutos</option>
+                    <option value="2">Horas</option>
+                    <option value="3">Días</option>
+                    <option value="4">Meses</option>
+                  </select>
+                </div>
+              </div>
+              <div style="display: flex; flex-direction: column;">
+                <div style="margin-bottom: 7px;">Hacer:</div>
+                <select class="form-select" style="font-family: Inter; font-size: 20px;" aria-label="Default select example">
+                  <option selected>Mandar a "No interesado"</option>
+                  <option value="1">Cerrar su cuenta</option>
+                  <option value="2">Reenviar mensaje</option>
+                  <option value="3">Enviar recordatorio</option>
+                  <option value="4">Mandar a "No interesado"</option>
+                </select>
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: row; justify-content: space-between; margin-left: 42px; margin-right: 42px; gap: 32px;">
+              <img src="icons/back.png" style="height: 28px; align-self: center;">
+              <img src="icons/save.png" style="height: 28px; align-self: center;">
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem; border-radius: 20px;  margin-left: 32px; background: linear-gradient(180deg, #A378F8 0px, #A378F8 65px, #FFFFFF 65px, #FFFFFF 100%); min-height: 18rem;">
+    <div class="card-body" style="padding-left: 0px; padding-right: 0px;">
+      <div style="display: flex; flex-direction: column; justify-content: center; padding-bottom: 10px;">
+        <b style="font-family: Inter; font-size: 24px; margin-bottom: 0px; text-align: center; z-index: 100; color: #FFFFFF;">Enviados previamente</b>
+      </div>
+      <div style="height: 4px;"></div>
+      <div style="overflow-y: scroll; height: calc(100vh - 215px);">
+        <historyentry [title]="'Aprovecha nuestros super descuentos de Febrero! Haz...'"
+                      [subtitle]="'15 de Febrero de 2025'"></historyentry>
+        <historyentry [title]="'No sabes que plan escoger? te mostramos todos los...'"
+                      [subtitle]="'1 de Marzo de 2025'"></historyentry>
+        <historyentry [title]="'Llamada para renovación de plan de Netflix'"
+                      [subtitle]="'9 de Marzo de 2025'"></historyentry>
+        <historyentry [title]="'Bienvenido de vuelta! LLegaste a tiempo para el ...'"
+                      [subtitle]="'9 de Marzo de 2025'"></historyentry>
+        <historyentry [title]="'Aprovecha nuestros super descuentos de Febrero! Haz...'"
+                      [subtitle]="'15 de Febrero de 2025'"></historyentry>
+        <historyentry [title]="'No sabes que plan escoger? te mostramos todos los...'"
+                      [subtitle]="'1 de Marzo de 2025'"></historyentry>
+        <historyentry [title]="'Llamada para renovación de plan de Netflix'"
+                      [subtitle]="'9 de Marzo de 2025'"></historyentry>
+        <historyentry [title]="'Bienvenido de vuelta! LLegaste a tiempo para el ...'"
+                      [subtitle]="'9 de Marzo de 2025'"></historyentry>
+        <historyentry [title]="'Aprovecha nuestros super descuentos de Febrero! Haz...'"
+                      [subtitle]="'15 de Febrero de 2025'"></historyentry>
+        <historyentry [title]="'No sabes que plan escoger? te mostramos todos los...'"
+                      [subtitle]="'1 de Marzo de 2025'"></historyentry>
+        <historyentry [title]="'Llamada para renovación de plan de Netflix'"
+                      [subtitle]="'9 de Marzo de 2025'"></historyentry>
+        <historyentry [title]="'Bienvenido de vuelta! LLegaste a tiempo para el ...'"
+                      [subtitle]="'9 de Marzo de 2025'"></historyentry>
+        <historyentry [title]="'Aprovecha nuestros super descuentos de Febrero! Haz...'"
+                      [subtitle]="'15 de Febrero de 2025'"></historyentry>
+        <historyentry [title]="'No sabes que plan escoger? te mostramos todos los...'"
+                      [subtitle]="'1 de Marzo de 2025'"></historyentry>
+        <historyentry [title]="'Llamada para renovación de plan de Netflix'"
+                      [subtitle]="'9 de Marzo de 2025'"></historyentry>
+        <historyentry [title]="'Bienvenido de vuelta! LLegaste a tiempo para el ...'"
+                      [subtitle]="'9 de Marzo de 2025'"></historyentry>
+        <historyentry [title]="'Aprovecha nuestros super descuentos de Febrero! Haz...'"
+                      [subtitle]="'15 de Febrero de 2025'"></historyentry>
+        <historyentry [title]="'No sabes que plan escoger? te mostramos todos los...'"
+                      [subtitle]="'1 de Marzo de 2025'"></historyentry>
+        <historyentry [title]="'Llamada para renovación de plan de Netflix'"
+                      [subtitle]="'9 de Marzo de 2025'"></historyentry>
+        <historyentry [title]="'Bienvenido de vuelta! LLegaste a tiempo para el ...'"
+                      [subtitle]="'9 de Marzo de 2025'"></historyentry>
+      </div>
+    </div>
+  </div>
+</div>

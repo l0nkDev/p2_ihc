@@ -13,8 +13,8 @@ export class ProspectsComponent {
   new = ['Joaquin Chumacero|Nunca', 'Ema Moya|Nunca', 'Denis Bolaños|Nunca', ];
   contacted = ['Saturnino Mamani|Hace 3h', ];
   following = ['Maria Duran|Ayer', 'Eduardo Cristobal|Hace 12h', 'Elena Verdu|Hace 8m', ];
-  converted = ['Joaquin Chumacero|Nunca', 'Ema Moya|Nunca', 'Denis Bolaños|Nunca', ];
-  uninterested = ['Joaquin Chumacero|Nunca', 'Ema Moya|Nunca', 'Denis Bolaños|Nunca', ];
+  converted = ['Javier Tello|Ayer', 'Aziz Corrales|Hace 6d', ];
+  uninterested = ['Carlos Sejas|Febrero 15', 'Jose Garces|Febrero 28', 'Cintia Caceres|Marzo 5', 'Gloria Vallejo|Marzo 14', 'Irati Borrego|Marzo 18', ];
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {

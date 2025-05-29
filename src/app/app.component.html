@@ -4,44 +4,54 @@
       <a style="outline: 0;" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
         <img src="icons/hamburger_menu.png" style="height: 40px; padding-left: 12px; padding-right: 24px;">
       </a>
-      <img src="icons/logo.png" style="height: 48px;">
+      <a routerLink="/" style="box-sizing: content-box;">
+        <img src="icons/logo.png" style="height: 48px;">
+      </a>
     </div>
-    <b class="navbar-brand" style="color: #A378F8; font-family: Inter; font-size: 40px; font-weight: 800;" href="#">Dashboard</b>
+    <b class="navbar-brand" style="display: flex; align-items: center; color: #A378F8; font-family: Inter; font-size: 40px; font-weight: 800; position: fixed; top: 5px; left: 50%; transform: translate(-50%);" href="#">
+      <img src="icons/dash_icon_purple.png" height="40px">
+      <div style="margin-left: 12px;">Dashboard</div>
+    </b>
     <div style="width: 40px;"></div>
     <div class="offcanvas offcanvas-start" style="background-color: #A378F8;" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
-        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-        </ul>
-        <form class="d-flex mt-3" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+        <div style="display: flex; flex-direction: column; gap: 30px; margin-left: 30px;">
+
+          <a routerLink="/" style=" text-decoration: none;">
+            <div style="display: flex; flex-direction: row; font-family: Inter; font-weight: 600; font-size: 24px; color: #FFFFFF; align-items: center;">
+              <img src="icons/dash_icon.png" height="40px" style="margin-right: 22px;">
+              <div>Dashboard</div>
+            </div>
+          </a>
+
+          <a routerLink="/prospects" style=" text-decoration: none;">
+            <div style="display: flex; flex-direction: row; font-family: Inter; font-weight: 600; font-size: 24px; color: #FFFFFF; align-items: center;">
+              <img src="icons/prospect_white.png" height="40px" style="margin-right: 22px;">
+              <div>Prospectos</div>
+            </div>
+          </a>
+
+          <a routerLink="/mass" style=" text-decoration: none;">
+            <div style="display: flex; flex-direction: row; font-family: Inter; font-weight: 600; font-size: 24px; color: #FFFFFF; align-items: center;">
+              <img src="icons/mass_icon.png" height="40px" style="margin-right: 22px;">
+              <div>Mensajes en masa</div>
+            </div>
+          </a>
+
+          <a routerLink="/automatization" style=" text-decoration: none;">
+            <div style="display: flex; flex-direction: row; font-family: Inter; font-weight: 600; font-size: 24px; color: #FFFFFF; align-items: center;">
+              <img src="icons/auto_icon.png" height="40px" style="margin-right: 22px;">
+              <div>Automatización</div>
+            </div>
+          </a>
+
+        </div>
       </div>
     </div>
   </div>
 </nav>
-<div style="height: 84px; width: 100vw;  background-color: #FFFFFF;"></div>
+<div style="height: 84px; width: 100vw; background-color: #FFFFFF; position: fixed; top: 0; left: 0; z-index: 100;"></div>
+<div style="height: 84px; width: 100vw;"></div>
 <router-outlet />
