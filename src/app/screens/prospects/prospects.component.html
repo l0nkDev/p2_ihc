@@ -1,89 +1,172 @@
-<div style=" padding: 32px; display: flex; flex-direction: row; justify-content: space-between; height: calc(100vh - 84px);">
+<div cdkDropListGroup style=" padding: 32px; display: flex; flex-direction: row; justify-content: space-between; height: calc(100vh - 84px);">
 
-  <div class="card" style="width: 18rem; border-radius: 20px; overflow: hidden;  margin-left: 32px;">
-      <div style="position: absolute; top: 0px; left: 0px; background-color: #A378F8; width: 100%; height: 65px; z-index: 0;"></div>
+  <div class="card" style="width: 18rem; border-radius: 20px;  margin-left: 32px; background: linear-gradient(180deg, #A378F8 0px, #A378F8 65px, #FFFFFF 65px, #FFFFFF 100%);">
     <div class="card-body" style="padding-left: 0px; padding-right: 0px;">
       <div style="display: flex; flex-direction: column; justify-content: center; padding-bottom: 10px;">
         <b style="font-family: Inter; font-size: 24px; margin-bottom: 0px; text-align: center; z-index: 100; color: #FFFFFF;">Nuevo</b>
       </div>
-
-    <div
-      cdkDropList
-      #todoList="cdkDropList"
-      [cdkDropListData]="new"
-      [cdkDropListConnectedTo]="[doneList]"
-      class="example-list"
-      (cdkDropListDropped)="drop($event)">
-      @for (item of new; track item) {
-        <div class="example-box" cdkDrag style="margin: 10px; border: 1px solid #E0D0FF; padding: 10px; padding-left: 20px; background-color: #FFFFFF; overflow: hidden;">
-          <div style="position: absolute; top: 0px; left: 0px; background-color: #A378F8; width: 200%; height: 65px;"></div>
-          {{item.split('|')[0]}}
-          <div>
-            Ult. Contacto: {{item.split('|')[1]}}
+      <div
+        cdkDropList
+        #newList="cdkDropList"
+        [cdkDropListData]="new"
+        [cdkDropListConnectedTo]="[newList, contactedList, followingList, convertedList, uninterestedList]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        @for (item of new; track item) {
+          <div class="example-box" cdkDrag style="margin: 10px; border: 1px solid #E0D0FF; padding: 10px; padding-left: 20px; background-color: #FFFFFF; border-radius: 10px; font-family: Inter; font-weight: 700; font-size: 24px; background: linear-gradient(90deg, #F4F4F4 0px, #F4F4F4 10px, #FFFFFF 10px, #FFFFFF 100%);">
+            {{item.split('|')[0]}}
+            <div style="display: flex; font-size: 16px; font-weight: 300; align-items: center; justify-content: space-between;">
+              <div>Ult. Contacto: {{item.split('|')[1]}}</div>
+              <div class="btn-group dropend">
+                <img src="icons/context_menu.png" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="height: 20px;">
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Llamar</a></li>
+                  <li><a class="dropdown-item" href="#">SMS/MMS/RCS</a></li>
+                  <li><a class="dropdown-item" href="#">Correo Electronico</a></li>
+                  <li><a class="dropdown-item" href="#">WhatsApp</a></li>
+                  <li><a class="dropdown-item" routerLink="/prospects/1">Perfil del prospecto</a></li>
+                </ul>
+              </div>
+            </div>
           </div>
-        </div>
-      }
-    </div>
-    </div>
-  </div>
-
-  <div class="example-container">
-    <h2>Contactado</h2>
-    <div
-      cdkDropList
-      #doneList="cdkDropList"
-      [cdkDropListData]="contacted"
-      [cdkDropListConnectedTo]="[todoList]"
-      class="example-list"
-      (cdkDropListDropped)="drop($event)">
-      @for (item of contacted; track item) {
-        <div class="example-box" cdkDrag>{{item}}</div>
-      }
+        }
+      </div>
     </div>
   </div>
 
-  <div class="example-container">
-    <h2>En Seguimiento</h2>
-    <div
-      cdkDropList
-      #doneList="cdkDropList"
-      [cdkDropListData]="following"
-      [cdkDropListConnectedTo]="[todoList]"
-      class="example-list"
-      (cdkDropListDropped)="drop($event)">
-      @for (item of following; track item) {
-        <div class="example-box" cdkDrag>{{item}}</div>
-      }
+  <div class="card" style="width: 18rem; border-radius: 20px;  margin-left: 32px; background: linear-gradient(180deg, #A378F8 0px, #A378F8 65px, #FFFFFF 65px, #FFFFFF 100%);">
+    <div class="card-body" style="padding-left: 0px; padding-right: 0px;">
+      <div style="display: flex; flex-direction: column; justify-content: center; padding-bottom: 10px;">
+        <b style="font-family: Inter; font-size: 24px; margin-bottom: 0px; text-align: center; z-index: 100; color: #FFFFFF;">Contactado</b>
+      </div>
+      <div
+        cdkDropList
+        #contactedList="cdkDropList"
+        [cdkDropListData]="contacted"
+        [cdkDropListConnectedTo]="[newList, contactedList, followingList, convertedList, uninterestedList]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        @for (item of contacted; track item) {
+          <div class="example-box" cdkDrag style="margin: 10px; border: 1px solid #E0D0FF; padding: 10px; padding-left: 20px; background-color: #FFFFFF; border-radius: 10px; font-family: Inter; font-weight: 700; font-size: 24px; background: linear-gradient(90deg, #BEECFF 0px, #BEECFF 10px, #FFFFFF 10px, #FFFFFF 100%);">
+            {{item.split('|')[0]}}
+            <div style="display: flex; font-size: 16px; font-weight: 300; align-items: center; justify-content: space-between;">
+              <div>Ult. Contacto: {{item.split('|')[1]}}</div>
+              <div class="btn-group dropend">
+                <img src="icons/context_menu.png" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="height: 20px;">
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Llamar</a></li>
+                  <li><a class="dropdown-item" href="#">SMS/MMS/RCS</a></li>
+                  <li><a class="dropdown-item" href="#">Correo Electronico</a></li>
+                  <li><a class="dropdown-item" href="#">WhatsApp</a></li>
+                  <li><a class="dropdown-item" routerLink="/prospects/1">Perfil del prospecto</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
     </div>
   </div>
 
-  <div class="example-container">
-    <h2>Convertido</h2>
-    <div
-      cdkDropList
-      #doneList="cdkDropList"
-      [cdkDropListData]="converted"
-      [cdkDropListConnectedTo]="[todoList]"
-      class="example-list"
-      (cdkDropListDropped)="drop($event)">
-      @for (item of converted; track item) {
-        <div class="example-box" cdkDrag>{{item}}</div>
-      }
+  <div class="card" style="width: 18rem; border-radius: 20px;  margin-left: 32px; background: linear-gradient(180deg, #A378F8 0px, #A378F8 65px, #FFFFFF 65px, #FFFFFF 100%);">
+    <div class="card-body" style="padding-left: 0px; padding-right: 0px;">
+      <div style="display: flex; flex-direction: column; justify-content: center; padding-bottom: 10px;">
+        <b style="font-family: Inter; font-size: 24px; margin-bottom: 0px; text-align: center; z-index: 100; color: #FFFFFF;">En Seguimiento</b>
+      </div>
+      <div
+        cdkDropList
+        #followingList="cdkDropList"
+        [cdkDropListData]="following"
+        [cdkDropListConnectedTo]="[newList, contactedList, followingList, convertedList, uninterestedList]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        @for (item of following; track item) {
+          <div class="example-box" cdkDrag style="margin: 10px; border: 1px solid #E0D0FF; padding: 10px; padding-left: 20px; background-color: #FFFFFF; border-radius: 10px; font-family: Inter; font-weight: 700; font-size: 24px; background: linear-gradient(90deg, #FFFD99 0px, #FFFD99 10px, #FFFFFF 10px, #FFFFFF 100%);">
+            {{item.split('|')[0]}}
+            <div style="display: flex; font-size: 16px; font-weight: 300; align-items: center; justify-content: space-between;">
+              <div>Ult. Contacto: {{item.split('|')[1]}}</div>
+              <div class="btn-group dropend">
+                <img src="icons/context_menu.png" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="height: 20px;">
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Llamar</a></li>
+                  <li><a class="dropdown-item" href="#">SMS/MMS/RCS</a></li>
+                  <li><a class="dropdown-item" href="#">Correo Electronico</a></li>
+                  <li><a class="dropdown-item" href="#">WhatsApp</a></li>
+                  <li><a class="dropdown-item" routerLink="/prospects/1">Perfil del prospecto</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
     </div>
   </div>
 
-  <div class="example-container">
-    <h2>No interesado</h2>
-    <div
-      cdkDropList
-      #doneList="cdkDropList"
-      [cdkDropListData]="uninterested"
-      [cdkDropListConnectedTo]="[todoList]"
-      class="example-list"
-      (cdkDropListDropped)="drop($event)">
-      @for (item of uninterested; track item) {
-        <div class="example-box" cdkDrag>{{item}}</div>
-      }
+  <div class="card" style="width: 18rem; border-radius: 20px;  margin-left: 32px; background: linear-gradient(180deg, #A378F8 0px, #A378F8 65px, #FFFFFF 65px, #FFFFFF 100%);">
+    <div class="card-body" style="padding-left: 0px; padding-right: 0px;">
+      <div style="display: flex; flex-direction: column; justify-content: center; padding-bottom: 10px;">
+        <b style="font-family: Inter; font-size: 24px; margin-bottom: 0px; text-align: center; z-index: 100; color: #FFFFFF;">Convertido</b>
+      </div>
+      <div
+        cdkDropList
+        #convertedList="cdkDropList"
+        [cdkDropListData]="converted"
+        [cdkDropListConnectedTo]="[newList, contactedList, followingList, convertedList, uninterestedList]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        @for (item of converted; track item) {
+          <div class="example-box" cdkDrag style="margin: 10px; border: 1px solid #E0D0FF; padding: 10px; padding-left: 20px; background-color: #FFFFFF; border-radius: 10px; font-family: Inter; font-weight: 700; font-size: 24px; background: linear-gradient(90deg, #BEFFBE 0px, #BEFFBE 10px, #FFFFFF 10px, #FFFFFF 100%);">
+            {{item.split('|')[0]}}
+            <div style="display: flex; font-size: 16px; font-weight: 300; align-items: center; justify-content: space-between;">
+              <div>Ult. Contacto: {{item.split('|')[1]}}</div>
+              <div class="btn-group dropend">
+                <img src="icons/context_menu.png" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="height: 20px;">
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Llamar</a></li>
+                  <li><a class="dropdown-item" href="#">SMS/MMS/RCS</a></li>
+                  <li><a class="dropdown-item" href="#">Correo Electronico</a></li>
+                  <li><a class="dropdown-item" href="#">WhatsApp</a></li>
+                  <li><a class="dropdown-item" routerLink="/prospects/1">Perfil del prospecto</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem; border-radius: 20px;  margin-left: 32px; background: linear-gradient(180deg, #A378F8 0px, #A378F8 65px, #FFFFFF 65px, #FFFFFF 100%);">
+    <div class="card-body" style="padding-left: 0px; padding-right: 0px;">
+      <div style="display: flex; flex-direction: column; justify-content: center; padding-bottom: 10px;">
+        <b style="font-family: Inter; font-size: 24px; margin-bottom: 0px; text-align: center; z-index: 100; color: #FFFFFF;">Nuevo</b>
+      </div>
+      <div
+        cdkDropList
+        #uninterestedList="cdkDropList"
+        [cdkDropListData]="new"
+        [cdkDropListConnectedTo]="[newList, contactedList, followingList, convertedList, uninterestedList]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        @for (item of new; track item) {
+          <div class="example-box" cdkDrag style="margin: 10px; border: 1px solid #E0D0FF; padding: 10px; padding-left: 20px; background-color: #FFFFFF; border-radius: 10px; font-family: Inter; font-weight: 700; font-size: 24px; background: linear-gradient(90deg, #FF8989 0px, #FF8989 10px, #FFFFFF 10px, #FFFFFF 100%);">
+            {{item.split('|')[0]}}
+            <div style="display: flex; font-size: 16px; font-weight: 300; align-items: center; justify-content: space-between;">
+              <div>Ult. Contacto: {{item.split('|')[1]}}</div>
+              <div class="btn-group dropend">
+                <img src="icons/context_menu.png" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="height: 20px;">
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Llamar</a></li>
+                  <li><a class="dropdown-item" href="#">SMS/MMS/RCS</a></li>
+                  <li><a class="dropdown-item" href="#">Correo Electronico</a></li>
+                  <li><a class="dropdown-item" href="#">WhatsApp</a></li>
+                  <li><a class="dropdown-item" routerLink="/prospects/1">Perfil del prospecto</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
     </div>
   </div>
 

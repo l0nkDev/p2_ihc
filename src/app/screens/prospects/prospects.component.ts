@@ -11,10 +11,10 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem, CdkDrag, CdkDropList }
 
 export class ProspectsComponent {
   new = ['Joaquin Chumacero|Nunca', 'Ema Moya|Nunca', 'Denis Bolaños|Nunca', ];
-  contacted = ['Get up'];
-  following = ['Get up'];
-  converted = ['Get up'];
-  uninterested = ['Get up'];
+  contacted = ['Saturnino Mamani|Hace 3h', ];
+  following = ['Maria Duran|Ayer', 'Eduardo Cristobal|Hace 12h', 'Elena Verdu|Hace 8m', ];
+  converted = ['Joaquin Chumacero|Nunca', 'Ema Moya|Nunca', 'Denis Bolaños|Nunca', ];
+  uninterested = ['Joaquin Chumacero|Nunca', 'Ema Moya|Nunca', 'Denis Bolaños|Nunca', ];
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
