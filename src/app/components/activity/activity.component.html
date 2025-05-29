@@ -1,0 +1,16 @@
+
+      <div style="display: flex; flex-direction: row; align-items: center; border-bottom: 1px solid #D9D9D9; padding: 16px;">
+        @if (icon == 'message') {
+          <img src="icons/message_circle.png" style="height: 40px; padding-right: 16px;">
+        }
+        @if (icon == 'checkmark') {
+          <img src="icons/checkmark_circle.png" style="height: 40px; padding-right: 16px;">
+        }
+        @if (icon == 'prospect') {
+          <img src="icons/prospect_circle.png" style="height: 40px; padding-right: 16px;">
+        }
+        <div style="display: flex; flex-direction: column;">
+          <div class="card-text" style="font-family: Inter; font-weight: 300; display: flex;">{{title}}</div>
+          <div class="card-text" style="font-family: Inter; font-weight: 300; display: flex; color: #9D9D9D;">{{subtitle}}</div>
+        </div>
+      </div>

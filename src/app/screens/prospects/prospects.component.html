@@ -1,0 +1,90 @@
+<div style=" padding: 32px; display: flex; flex-direction: row; justify-content: space-between; height: calc(100vh - 84px);">
+
+  <div class="card" style="width: 18rem; border-radius: 20px; overflow: hidden;  margin-left: 32px;">
+      <div style="position: absolute; top: 0px; left: 0px; background-color: #A378F8; width: 100%; height: 65px; z-index: 0;"></div>
+    <div class="card-body" style="padding-left: 0px; padding-right: 0px;">
+      <div style="display: flex; flex-direction: column; justify-content: center; padding-bottom: 10px;">
+        <b style="font-family: Inter; font-size: 24px; margin-bottom: 0px; text-align: center; z-index: 100; color: #FFFFFF;">Nuevo</b>
+      </div>
+
+    <div
+      cdkDropList
+      #todoList="cdkDropList"
+      [cdkDropListData]="new"
+      [cdkDropListConnectedTo]="[doneList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      @for (item of new; track item) {
+        <div class="example-box" cdkDrag style="margin: 10px; border: 1px solid #E0D0FF; padding: 10px; padding-left: 20px; background-color: #FFFFFF; overflow: hidden;">
+          <div style="position: absolute; top: 0px; left: 0px; background-color: #A378F8; width: 200%; height: 65px;"></div>
+          {{item.split('|')[0]}}
+          <div>
+            Ult. Contacto: {{item.split('|')[1]}}
+          </div>
+        </div>
+      }
+    </div>
+    </div>
+  </div>
+
+  <div class="example-container">
+    <h2>Contactado</h2>
+    <div
+      cdkDropList
+      #doneList="cdkDropList"
+      [cdkDropListData]="contacted"
+      [cdkDropListConnectedTo]="[todoList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      @for (item of contacted; track item) {
+        <div class="example-box" cdkDrag>{{item}}</div>
+      }
+    </div>
+  </div>
+
+  <div class="example-container">
+    <h2>En Seguimiento</h2>
+    <div
+      cdkDropList
+      #doneList="cdkDropList"
+      [cdkDropListData]="following"
+      [cdkDropListConnectedTo]="[todoList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      @for (item of following; track item) {
+        <div class="example-box" cdkDrag>{{item}}</div>
+      }
+    </div>
+  </div>
+
+  <div class="example-container">
+    <h2>Convertido</h2>
+    <div
+      cdkDropList
+      #doneList="cdkDropList"
+      [cdkDropListData]="converted"
+      [cdkDropListConnectedTo]="[todoList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      @for (item of converted; track item) {
+        <div class="example-box" cdkDrag>{{item}}</div>
+      }
+    </div>
+  </div>
+
+  <div class="example-container">
+    <h2>No interesado</h2>
+    <div
+      cdkDropList
+      #doneList="cdkDropList"
+      [cdkDropListData]="uninterested"
+      [cdkDropListConnectedTo]="[todoList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      @for (item of uninterested; track item) {
+        <div class="example-box" cdkDrag>{{item}}</div>
+      }
+    </div>
+  </div>
+
+</div>

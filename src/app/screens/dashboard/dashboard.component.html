@@ -1,0 +1,120 @@
+<div style=" padding: 32px; display: flex; flex-direction: row; justify-content: space-between; height: calc(100vh - 84px);">
+  <div style="flex-direction: column;">
+    <div style="display: flex; flex-direction: column;">
+      <div style="display: flex; gap: 32px;">
+        <div class="card" style="width: 18rem; border-radius: 20px;">
+          <div class="card-body">
+            <div style="display: flex; justify-content: space-between; padding-bottom: 10px;">
+              <b class="card-title" style="font-family: Inter;">Conversion de clientes</b><img src="icons/prospect_purple.png" style="height: 32px;">
+            </div>
+              <div style="display: flex; flex-direction: row; justify-content: center;">
+                <div style="display: flex; flex-direction: column;">
+                  <div class="card-text" style="font-family: Inter; font-weight: 300; display: flex; flex-direction: row; color: #9D9D9D; justify-content: end; padding-right: 24px;"><div style="padding-right: 5px; color: #A378F8;">45</div>nuevos</div>
+                  <div class="card-text" style="font-family: Inter; font-weight: 300; display: flex; flex-direction: row; color: #9D9D9D; justify-content: end; padding-right: 24px;"><div style="padding-right: 5px; color: #A378F8;">34</div>contactados</div>
+                  <div class="card-text" style="font-family: Inter; font-weight: 300; display: flex; flex-direction: row; color: #9D9D9D; justify-content: end; padding-right: 24px;"><div style="padding-right: 5px; color: #A378F8;">27</div>interesados</div>
+                </div>
+                  <img src="icons/funnel.png" style="height: 64px; width: 64px;">
+              </div>
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem; border-radius: 20px;">
+          <div class="card-body">
+            <div style="display: flex; justify-content: space-between; padding-bottom: 10px;">
+              <b class="card-title" style="font-family: Inter;" routerLink="/prospects">Prospectos nuevos</b><img src="icons/new_prospect_purple.png" style="height: 32px;">
+            </div>
+            <b class="card-text" style="font-family: Inter; font-weight: 700; display: flex; flex-direction: row; color: #A378F8; padding-right: 24px; font-size: 24px; padding-bottom: 10px;">8</b>
+            <div style="display: flex; justify-content: space-between;">
+              <div class="card-text" style="font-family: Inter; font-weight: 300; display: flex; flex-direction: row; color: #9D9D9D; align-self: flex-end;">Agregados hoy</div>
+              <div class="card-text" style="font-family: Inter; font-weight: 300; display: flex; flex-direction: row; color: #61C076; font-size: 24px;">↑12%</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem; border-radius: 20px;">
+          <div class="card-body">
+            <div style="display: flex; justify-content: space-between; padding-bottom: 10px;">
+              <b class="card-title" style="font-family: Inter;">Tareas pendientes</b><img src="icons/checkmark_purple.png" style="height: 32px;">
+            </div>
+            <b class="card-text" style="font-family: Inter; font-weight: 700; display: flex; flex-direction: row; color: #A378F8; padding-right: 24px; font-size: 24px; padding-bottom: 10px;">12</b>
+            <div style="display: flex; justify-content: space-between;">
+              <div class="card-text" style="font-family: Inter; font-weight: 300; display: flex; flex-direction: row; color: #9D9D9D; align-self: flex-end;">4 de alta prioridad</div>
+              <div class="card-text" style="font-family: Inter; font-weight: 300; display: flex; flex-direction: row; color: #FF0404; font-size: 24px;">↑5%</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem; border-radius: 20px;">
+          <div class="card-body">
+            <div style="display: flex; justify-content: space-between;">
+              <b class="card-title" style="font-family: Inter;">Resumen del dia</b><img src="icons/calendar_purple.png" style="height: 32px;">
+            </div>
+            <div class="card-text" style="font-family: Inter; font-weight: 300; display: flex; flex-direction: row; color: #9D9D9D; padding-right: 24px;">Tareas pendientes:<div style="padding-left: 5px; color: #A378F8;">5</div></div>
+            <div class="card-text" style="font-family: Inter; font-weight: 300; display: flex; flex-direction: row; color: #9D9D9D; padding-right: 24px;">Prospectos nuevos:<div style="padding-left: 5px; color: #A378F8;">3</div></div>
+            <div class="card-text" style="font-family: Inter; font-weight: 300; display: flex; flex-direction: row; color: #9D9D9D; padding-right: 24px;">Llamadas programadas:<div style="padding-left: 5px; color: #A378F8;">7</div></div>
+            <div class="card-text" style="font-family: Inter; font-weight: 300; display: flex; flex-direction: row; color: #9D9D9D; padding-right: 24px;">Renovaciones:<div style="padding-left: 5px; color: #A378F8;">2</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <span class="badge" style="font-family: Inter; border-radius: 100px; background-color: #E9E6F5; height: 40px; align-content: center; margin-top: 32px; margin-bottom: 32px;">
+      <span class="badge" style="font-family: Inter; border-radius: 100px; background-color: #A378F8; color: #FFFFFF; height: 30px; align-content: center; font-size: 16px; font-weight: 100;">Tareas Pendientes</span>
+      <span class="badge" style="font-family: Inter; border-radius: 100px; color: #9D9D9D; height: 30px; align-content: center; font-size: 16px; font-weight: 100;">Servicios</span>
+    </span>
+
+    <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 32px;">
+      <dashboardcard
+                      [colored]="true"
+                      [color]="'#F4F4F4'"
+                      [priority]="'high'"
+                      [title]="'Contactar a Juan Perez'"
+                      [subtitle]="'Llamar para presentar planes de Netflix'"
+                      [time]="'10:30 AM'"
+                      [type]="'call'"></dashboardcard>
+
+      <dashboardcard
+                      [colored]="true"
+                      [color]="'#BEFFBE'"
+                      [priority]="'low'"
+                      [title]="'Contactar a Ema Moya'"
+                      [subtitle]="'Verificar si recibió credenciales de HBO Max'"
+                      [time]="'2:30 PM'"
+                      [type]="'followup'"></dashboardcard>
+
+      <dashboardcard
+                      [priority]="'mid'"
+                      [title]="'Soporte técnico Star+'"
+                      [subtitle]="'Resolver problemas de acceso a la cuenta.'"
+                      [time]="'5:30 PM'"
+                      [type]="'support'"></dashboardcard>
+
+      <dashboardcard
+                      [priority]="'mid'"
+                      [title]="'Renovación Star+'"
+                      [subtitle]="'Verificar renovacion de cuenta familiar'"
+                      [time]="'6:00 PM'"
+                      [type]="'renewal'"></dashboardcard>
+      </div>
+  </div>
+
+  <div class="card" style="width: 18rem; border-radius: 20px; overflow: hidden; width: 100%; margin-left: 32px;">
+      <div style="position: absolute; top: 0px; left: 0px; background-color: #A378F8; width: 100%; height: 100px; z-index: 0;"></div>
+    <div class="card-body" style="padding-left: 0px; padding-right: 0px;">
+      <div style="display: flex; flex-direction: column; justify-content: center; padding-bottom: 10px;">
+        <b style="font-family: Inter; font-size: 24px; margin-bottom: 0px; text-align: center; z-index: 100; color: #FFFFFF;">Actividad Reciente</b>
+        <b style="font-family: Inter; font-size: 24px; font-weight: 300; text-align: center; z-index: 100; color: #FFFFFF;">Últimas acciones</b>
+      </div>
+      <activity [icon]="'message'"
+                [title]="'Mensaje a Laura Martinez'"
+                [subtitle]="'Hace 25 minutos'"></activity>
+      <activity [icon]="'checkmark'"
+                [title]="'Activación de Netflix'"
+                [subtitle]="'Hace 1 hora'"></activity>
+      <activity [icon]="'prospect'"
+                [title]="'Nuevo prospecto: Joaquin C.'"
+                [subtitle]="'Hace 2 horas'"></activity>
+    </div>
+  </div>
+
+</div>
