@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'activity',
   templateUrl: './activity.component.html',
-  imports: [FormsModule, RouterLink],
+  imports: [FormsModule],
 })
 
 export class ActivityComponent {

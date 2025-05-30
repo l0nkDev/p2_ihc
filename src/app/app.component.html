@@ -4,14 +4,45 @@
       <a style="outline: 0;" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
         <img src="icons/hamburger_menu.png" style="height: 40px; padding-left: 12px; padding-right: 24px;">
       </a>
+      @if ((currentroute.startsWith('/prospects') && currentroute != '/prospects') || currentroute == '/mass') {
+      <a style="outline: 0;" routerLink="/prospects">
+        <img src="icons/back.png" style="height: 40px; padding-left: 12px; padding-right: 24px;">
+      </a>
+      }
       <a routerLink="/" style="box-sizing: content-box;">
         <img src="icons/logo.png" style="height: 48px;">
       </a>
     </div>
-    <b class="navbar-brand" style="display: flex; align-items: center; color: #A378F8; font-family: Inter; font-size: 40px; font-weight: 800; position: fixed; top: 5px; left: 50%; transform: translate(-50%);" href="#">
-      <img src="icons/dash_icon_purple.png" height="40px">
-      <div style="margin-left: 12px;">Dashboard</div>
-    </b>
+    @if (currentroute == '/') {
+      <b class="navbar-brand" style="display: flex; align-items: center; color: #A378F8; font-family: Inter; font-size: 40px; font-weight: 800; position: fixed; top: 5px; left: 50%; transform: translate(-50%);" href="#">
+        <img src="icons/dash_icon_purple.png" height="40px">
+        <div style="margin-left: 12px;">Dashboard</div>
+      </b>
+    }
+    @if (currentroute.startsWith('/prospects') && currentroute != '/prospects') {
+      <b class="navbar-brand" style="display: flex; align-items: center; color: #A378F8; font-family: Inter; font-size: 40px; font-weight: 800; position: fixed; top: 5px; left: 50%; transform: translate(-50%);" href="#">
+        <img src="icons/prospect_purple.png" height="40px">
+        <div style="margin-left: 12px;">Perfil del prospecto</div>
+      </b>
+    }
+    @if (currentroute == '/prospects') {
+      <b class="navbar-brand" style="display: flex; align-items: center; color: #A378F8; font-family: Inter; font-size: 40px; font-weight: 800; position: fixed; top: 5px; left: 50%; transform: translate(-50%);" href="#">
+        <img src="icons/prospect_purple.png" height="40px">
+        <div style="margin-left: 12px;">Prospectos</div>
+      </b>
+    }
+    @if (currentroute == '/mass') {
+      <b class="navbar-brand" style="display: flex; align-items: center; color: #A378F8; font-family: Inter; font-size: 40px; font-weight: 800; position: fixed; top: 5px; left: 50%; transform: translate(-50%);" href="#">
+        <img src="icons/mass_icon_purple.png" height="40px">
+        <div style="margin-left: 12px;">Mensajes en masa</div>
+      </b>
+    }
+    @if (currentroute == '/automatization') {
+      <b class="navbar-brand" style="display: flex; align-items: center; color: #A378F8; font-family: Inter; font-size: 40px; font-weight: 800; position: fixed; top: 5px; left: 50%; transform: translate(-50%);" href="#">
+        <img src="icons/auto_icon_purple.png" height="40px">
+        <div style="margin-left: 12px;">Automatización</div>
+      </b>
+    }
     <div style="width: 40px;"></div>
     <div class="offcanvas offcanvas-start" style="background-color: #A378F8;" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">

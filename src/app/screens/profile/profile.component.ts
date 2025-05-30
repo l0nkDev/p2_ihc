@@ -9,8 +9,21 @@ import { HistoryEntry } from "../../components/historyentry/historyentry.compone
 })
 
 export class ProfileComponent {
+  index = -1;
+  text = '';
 
+  overlay = false;
 
+  openOverlay(id: number) {
+    this.index = id;
+    this.overlay = true;
+  }
+
+  closeOverlay() {
+    this.index = -1;
+    this.text = '';
+    this.overlay = false;
+  }
 }
 
 

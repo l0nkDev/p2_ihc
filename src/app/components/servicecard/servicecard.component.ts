@@ -1,28 +1,27 @@
 import { Component, Input, output } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'dashboardcard',
-  templateUrl: './dashboardcard.component.html',
+  selector: 'servicecard',
+  templateUrl: './servicecard.component.html',
   imports: [FormsModule],
 })
 
-export class DashboardCardComponent {
+export class ServiceCardComponent {
   @Input() id: number = -1;
-  @Input() colored: boolean = false;
-  @Input() color: string = '';
-  @Input() priority: string = '';
   @Input() title: string = '';
+  @Input() platform: string = '';
   @Input() subtitle: string = '';
-  @Input() time: string = '';
-  @Input() type: string = '';
+  @Input() price: string = '';
+  @Input() clients: string = '';
 
   deleteEvent = output<number>();
 
   clicked() {
     this.deleteEvent.emit(this.id);
   }
+
+
 }
 
 

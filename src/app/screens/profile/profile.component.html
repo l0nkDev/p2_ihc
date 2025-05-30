@@ -43,10 +43,10 @@
             </div>
             <div style=" display: flex; flex-grow: 1; justify-content: space-around; height: calc(100% - 32px);">
               <div style="display: flex; flex-direction: column; height: 100%; justify-content: space-around; font-family: Inter; font-size: 16px; font-weight: 300;">
-                <div><img src="icons/phone_filled_purple.png" style="height: 24px; padding-right: 10px;">Llamar</div>
-                <div><img src="icons/sms_purple.png" style="height: 24px; padding-right: 10px;">SMS/MMS/RCS</div>
-                <div><img src="icons/email_purple.png" style="height: 24px; padding-right: 10px;">Correo Electronico</div>
-                <div><img src="icons/whatsapp_purple.png" style="height: 24px; padding-right: 10px;">WhatsApp</div>
+                <div (click)="openOverlay(1)"><img src="icons/phone_filled_purple.png" style="height: 24px; padding-right: 10px;">Llamar</div>
+                <div (click)="openOverlay(2)"><img src="icons/sms_purple.png" style="height: 24px; padding-right: 10px;">SMS/MMS/RCS</div>
+                <div (click)="openOverlay(3)"><img src="icons/email_purple.png" style="height: 24px; padding-right: 10px;">Correo Electronico</div>
+                <div (click)="openOverlay(4)"><img src="icons/whatsapp_purple.png" style="height: 24px; padding-right: 10px;">WhatsApp</div>
               </div>
             </div>
           </div>
@@ -139,3 +139,33 @@
     </div>
   </div>
 </div>
+
+@if (overlay) {
+<div style="position: fixed; top: 0px; left: 0px; height: 100vh; width: 100vw; background-color: #00000088; z-index: 100000;">
+      <div class="card" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 25rem; border-radius: 20px; background: linear-gradient(180deg, #A378F8 0px, #A378F8 65px, #FFFFFF 65px, #FFFFFF 100%);">
+      <div class="card-body" style="padding-left: 0px; padding-right: 0px;">
+        <div style="display: flex; flex-direction: column; justify-content: center; padding-bottom: 10px;">
+          <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+            <b style="font-family: Inter; font-size: 24px; margin-bottom: 0px; text-align: center; z-index: 100; color: #FFFFFF;">Guardar interacción</b>
+          </div>
+        </div>
+        <div style="padding: 32px;">
+          <div style="font-family: Inter; font-size: 20px; color: #A378F8;">Medio:</div>
+          <select [(ngModel)]="index" class="form-select" style="font-family: Inter; font-size: 20px;" aria-label="Default select example">
+            <option value="1">Llamada</option>
+            <option value="2">SMS/MMS/RCS</option>
+            <option value="3">Correo electrónico</option>
+            <option value="4">WhatsApp</option>
+          </select>
+          <div style="font-family: Inter; font-size: 20px; color: #A378F8;">Resumen:</div>
+          <textarea [(ngModel)]="text" class="form-control" style="font-family: Inter; font-size: 20px;" rows="4" aria-label="Default select example">
+          </textarea>
+          <div style="display: flex; flex-direction: row; justify-content: end; margin-top: 16px;">
+            <button [disabled]="text != '' && index > -1 ? false : true" (click)="closeOverlay()" class="btn btn-primary" style="color: white; background-color: #A378F8; font-family: Inter; font-size: 20px; border: 0px; border-radius: 10px;">Guardar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+}
+

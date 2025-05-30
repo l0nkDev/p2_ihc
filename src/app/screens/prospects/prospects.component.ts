@@ -28,6 +28,22 @@ export class ProspectsComponent {
       );
     }
   }
+
+  index = -1;
+  text = '';
+
+  overlay = false;
+
+  openOverlay(id: number) {
+    this.index = id;
+    this.overlay = true;
+  }
+
+  closeOverlay() {
+    this.index = -1;
+    this.text = '';
+    this.overlay = false;
+  }
 }
 
 

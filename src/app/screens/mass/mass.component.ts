@@ -22,6 +22,23 @@ export class MassComponent {
              'Aprovecha nuestra promocion del mes de Pascua. 2x1 en cuentas...',
              'Precios actualizados Mayo 2025! Netflix: 25 Bs x Persona x Mes...',
              'Estamos en todas partes! Hablale a alguno de nuestros asesores y...',]
+
+  title = '';
+  channel = -1;
+  segment = -1;
+  message = '';
+  c1 = false;
+  c2 = false;
+
+  reset() {
+    this.title = '';
+    this.channel = -1;
+    this.segment = -1;
+    this.message = '';
+    this.c1 = false;
+    this.c2 = false;
+  }
+
 }
 
 

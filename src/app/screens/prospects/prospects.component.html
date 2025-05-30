@@ -1,8 +1,10 @@
 <div style=" display: flex; flex-direction: column; padding: 32px; padding-top: 24px;">
-  <button type="button" class="btn btn-primary" style="height: 60px; font-family: Inter; font-size: 20px; background-color: #A378F8; width: 256px; border-radius: 20px; margin-bottom: 24px">
-    <img src="icons/mass_icon.png" style="height: 32px;">
-    Mensajes en masa
-  </button>
+  <a style=" text-decoration: none;" routerLink="/mass">
+    <button type="button" class="btn btn-primary" style="height: 60px; font-family: Inter; font-size: 20px; background-color: #A378F8; width: 256px; border-radius: 20px; margin-bottom: 24px">
+      <img src="icons/mass_icon.png" style="height: 32px;">
+      Mensajes en masa
+    </button>
+  </a>
   <div cdkDropListGroup style="display: flex; flex-direction: row; justify-content: center; gap: 8px; height: calc(100vh - 228px);">
     <div class="card" style="flex-grow: 1; border-radius: 20px; background: linear-gradient(180deg, #A378F8 0px, #A378F8 65px, #FFFFFF 65px, #FFFFFF 100%);">
       <div class="card-body" style="padding-left: 0px; padding-right: 0px;">
@@ -27,10 +29,10 @@
                 <div class="btn-group dropend">
                   <img src="icons/context_menu.png" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="height: 20px;">
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Llamar</a></li>
-                    <li><a class="dropdown-item" href="#">SMS/MMS/RCS</a></li>
-                    <li><a class="dropdown-item" href="#">Correo Electronico</a></li>
-                    <li><a class="dropdown-item" href="#">WhatsApp</a></li>
+                    <li><a class="dropdown-item" (click)="openOverlay(1)">Llamar</a></li>
+                    <li><a class="dropdown-item" (click)="openOverlay(2)">SMS/MMS/RCS</a></li>
+                    <li><a class="dropdown-item" (click)="openOverlay(3)">Correo Electronico</a></li>
+                    <li><a class="dropdown-item" (click)="openOverlay(4)">WhatsApp</a></li>
                     <li><a class="dropdown-item" routerLink="/prospects/1">Perfil del prospecto</a></li>
                   </ul>
                 </div>
@@ -64,10 +66,10 @@
                 <div class="btn-group dropend" style="min-height: 25px;">
                   <img src="icons/context_menu.png" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="height: 20px;">
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Llamar</a></li>
-                    <li><a class="dropdown-item" href="#">SMS/MMS/RCS</a></li>
-                    <li><a class="dropdown-item" href="#">Correo Electronico</a></li>
-                    <li><a class="dropdown-item" href="#">WhatsApp</a></li>
+                    <li><a class="dropdown-item" (click)="openOverlay(1)">Llamar</a></li>
+                    <li><a class="dropdown-item" (click)="openOverlay(2)">SMS/MMS/RCS</a></li>
+                    <li><a class="dropdown-item" (click)="openOverlay(3)">Correo Electronico</a></li>
+                    <li><a class="dropdown-item" (click)="openOverlay(4)">WhatsApp</a></li>
                     <li><a class="dropdown-item" routerLink="/prospects/1">Perfil del prospecto</a></li>
                   </ul>
                 </div>
@@ -101,10 +103,10 @@
                 <div class="btn-group dropend">
                   <img src="icons/context_menu.png" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="height: 20px;">
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Llamar</a></li>
-                    <li><a class="dropdown-item" href="#">SMS/MMS/RCS</a></li>
-                    <li><a class="dropdown-item" href="#">Correo Electronico</a></li>
-                    <li><a class="dropdown-item" href="#">WhatsApp</a></li>
+                    <li><a class="dropdown-item" (click)="openOverlay(1)">Llamar</a></li>
+                    <li><a class="dropdown-item" (click)="openOverlay(2)">SMS/MMS/RCS</a></li>
+                    <li><a class="dropdown-item" (click)="openOverlay(3)">Correo Electronico</a></li>
+                    <li><a class="dropdown-item" (click)="openOverlay(4)">WhatsApp</a></li>
                     <li><a class="dropdown-item" routerLink="/prospects/1">Perfil del prospecto</a></li>
                   </ul>
                 </div>
@@ -138,10 +140,10 @@
                 <div class="btn-group dropend">
                   <img src="icons/context_menu.png" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="height: 20px;">
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Llamar</a></li>
-                    <li><a class="dropdown-item" href="#">SMS/MMS/RCS</a></li>
-                    <li><a class="dropdown-item" href="#">Correo Electronico</a></li>
-                    <li><a class="dropdown-item" href="#">WhatsApp</a></li>
+                    <li><a class="dropdown-item" (click)="openOverlay(1)">Llamar</a></li>
+                    <li><a class="dropdown-item" (click)="openOverlay(2)">SMS/MMS/RCS</a></li>
+                    <li><a class="dropdown-item" (click)="openOverlay(3)">Correo Electronico</a></li>
+                    <li><a class="dropdown-item" (click)="openOverlay(4)">WhatsApp</a></li>
                     <li><a class="dropdown-item" routerLink="/prospects/1">Perfil del prospecto</a></li>
                   </ul>
                 </div>
@@ -175,10 +177,10 @@
                 <div class="btn-group dropend">
                   <img src="icons/context_menu.png" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="height: 20px;">
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Llamar</a></li>
-                    <li><a class="dropdown-item" href="#">SMS/MMS/RCS</a></li>
-                    <li><a class="dropdown-item" href="#">Correo Electronico</a></li>
-                    <li><a class="dropdown-item" href="#">WhatsApp</a></li>
+                    <li><a class="dropdown-item" (click)="openOverlay(1)">Llamar</a></li>
+                    <li><a class="dropdown-item" (click)="openOverlay(2)">SMS/MMS/RCS</a></li>
+                    <li><a class="dropdown-item" (click)="openOverlay(3)">Correo Electronico</a></li>
+                    <li><a class="dropdown-item" (click)="openOverlay(4)">WhatsApp</a></li>
                     <li><a class="dropdown-item" routerLink="/prospects/1">Perfil del prospecto</a></li>
                   </ul>
                 </div>
@@ -190,3 +192,31 @@
     </div>
   </div>
 </div>
+@if (overlay) {
+<div style="position: fixed; top: 0px; left: 0px; height: 100vh; width: 100vw; background-color: #00000088; z-index: 100000;">
+      <div class="card" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 25rem; border-radius: 20px; background: linear-gradient(180deg, #A378F8 0px, #A378F8 65px, #FFFFFF 65px, #FFFFFF 100%);">
+      <div class="card-body" style="padding-left: 0px; padding-right: 0px;">
+        <div style="display: flex; flex-direction: column; justify-content: center; padding-bottom: 10px;">
+          <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+            <b style="font-family: Inter; font-size: 24px; margin-bottom: 0px; text-align: center; z-index: 100; color: #FFFFFF;">Guardar interacción</b>
+          </div>
+        </div>
+        <div style="padding: 32px;">
+          <div style="font-family: Inter; font-size: 20px; color: #A378F8;">Medio:</div>
+          <select [(ngModel)]="index" class="form-select" style="font-family: Inter; font-size: 20px;" aria-label="Default select example">
+            <option value="1">Llamada</option>
+            <option value="2">SMS/MMS/RCS</option>
+            <option value="3">Correo electrónico</option>
+            <option value="4">WhatsApp</option>
+          </select>
+          <div style="font-family: Inter; font-size: 20px; color: #A378F8;">Resumen:</div>
+          <textarea [(ngModel)]="text" class="form-control" style="font-family: Inter; font-size: 20px;" rows="4" aria-label="Default select example">
+          </textarea>
+          <div style="display: flex; flex-direction: row; justify-content: end; margin-top: 16px;">
+            <button [disabled]="text != '' && index > -1 ? false : true" (click)="closeOverlay()" class="btn btn-primary" style="color: white; background-color: #A378F8; font-family: Inter; font-size: 20px; border: 0px; border-radius: 10px;">Guardar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+}
